@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Типография с доставкой</title>
+  <link rel="stylesheet" href="static/styles.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+    <header class="header-line">
+        <div class="header-top">
+            <div class="logo-block">
+                <img src="{{ url_for('static', filename='images/header-logo.svg') }}" alt="Логотип" class="logo">
+                <span class="city">Москва</span>
+            </div>
+            <button class="btn filled" id="open-calc">Расчет стоимости печати</button>
+            <span class="address">Москва, ул. Стромынка, 9</span>
+            <div class="contacts">
+                <div class="contacts-1"><img src="{{ url_for('static', filename='images/header-line-whats-app.svg') }}" class="icon"></div>
+                <img src="{{ url_for('static', filename='images/header-line-phone.svg') }}" class="icon">
+                <div class="contacts-3"><span class="phone">+7 (495) 108 74 70</span></div>
+            </div>
+            <button class="btn outlined" id="open-call">Заказать звонок</button>
+        </div>
+
+        <nav class="header-bottom">
+            <ul class="nav">
+                <li class="dropdown">
+                    <a href="#">Типография</a>
+                    <ul class="dropdown-content">
+                        <li><a href="{{ url_for('delivery') }}">Типография с доставкой</a></li>
+                        <li><a href="{{ url_for('offset') }}">Офсетная типография</a></li>
+                        <li><a href="{{ url_for('digital') }}">Цифровая типография</a></li>
+                        <li><a href="{{ url_for('weekend') }}">Типография выходные</a></li>
+                        <li><a href="{{ url_for('cheep') }}">Недорогая типография</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Услуги типографии</a>
+                    <ul class="dropdown-content">
+                        <li><a href="{{ url_for('tags') }}">Бирки</a></li>
+                        <li><a href="{{ url_for('badges') }}">Бейджи</a></li>
+                        <li><a href="{{ url_for('forms') }}">Бланки</a></li>
+                        <li><a href="{{ url_for('Interior_printing') }}">Интерьерная печать</a></li>
+                        <li><a href="{{ url_for('Brochures') }}">Брошюры</a></li>
+                        <li><a href="{{ url_for('annual_reports') }}">Годовые отчеты</a></li>
+                        <li><a href="{{ url_for('newspapers') }}">Газеты</a></li>
+                        <li><a href="{{ url_for('magazines') }}">Журналы</a></li>
+                        <li><a href="{{ url_for('holographic_stickers') }}">Голографические наклейки</a></li>
+                        <li><a href="{{ url_for('magnetic_cards') }}">Магнитные карты</a></li>
+                        <li><a href="{{ url_for('magnetic_souvenirs') }}">Магнитные сувениры</a></li>
+                        <li><a href="{{ url_for('menu') }}">Печать меню для ресторанов</a></li>
+                        <li><a href="{{ url_for('labels') }}">Этикетки</a></li>
+                        <li><a href="{{ url_for('stickers') }}">Распечатать наклейки</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Полиграфия</a>
+                    <ul class="dropdown-content">
+                        <li><a href="{{ url_for('business_cards') }}">Визитки</a></li>
+                        <li><a href="{{ url_for('leaflets') }}">Листовки</a></li>
+                        <li><a href="{{ url_for('notepads') }}">Блокноты</a></li>
+                        <li><a href="{{ url_for('flyers') }}">Флаеры</a></li>
+                        <li><a href="{{ url_for('booklet') }}">Буклеты</a></li>
+                        <li><a href="{{ url_for('presentations') }}">Презентации</a></li>
+                        <li><a href="{{ url_for('calendars') }}">Календари</a></li>
+                        <li><a href="{{ url_for('postcards') }}">Печать открыток</a></li>
+                        <li><a href="{{ url_for('wedding') }}">Печать пригласительных на свадьбу</a></li>
+                        <li><a href="{{ url_for('elevators') }}">Печать лифлетов</a></li>
+                        <li><a href="{{ url_for('kubariki') }}">Печать кубариков</a></li>
+                        <li><a href="{{ url_for('A4') }}">Цветная печать A4</a></li>
+                        <li><a href="{{ url_for('double_sided_stickers') }}">Двухсторонние наклейки</a></li>
+                        <li><a href="{{ url_for('signs') }}">Таблички на заказ</a></li>
+                        <li><a href="{{ url_for('banners') }}">Печать баннеров</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Доставка</a>
+                    <ul class="dropdown-content">
+                        <li><a href="{{ url_for('payment') }}">Оплата</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ url_for('photogallery') }}">Фотогалерея</a></li>
+                <li><a href="{{ url_for('contacts') }}">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+  <!-- ГЛАВНЫЙ БАННЕР -->
+  <section class="main-banner">
+    <img src="static/images/photo-main.jpg" alt="Типография с доставкой" class="main-photo" />
+    <div class="main-title animated-text">
+      <h1>Типография с <span>доставкой</span></h1>
+      <button class="btn open-modal">Оформить заказ</button>
+    </div>
+  </section>
+
+  <!-- БЛОК С ТЕКСТОМ И ИЗОБРАЖЕНИЕМ -->
+  <section class="info-block">
+    <div class="container two-columns">
+      <div class="text-content">
+        <h2><span>Доставка</span> по всей России</h2>
+        <p>Мы предлагаем быструю и надёжную доставку типографической продукции в любой город России. Отправка осуществляется в кратчайшие сроки, чтобы вы получили свою продукцию точно в срок.</p>
+        <p>Благодаря отлаженной логистике, наша типография обеспечивает доставку без задержек, с полным контролем каждого этапа транспортировки.</p>
+        <button class="btn open-modal">Заказать с доставкой</button>
+      </div>
+      <div class="image-content">
+        <img src="static/images/photo-main.jpg" alt="Доставка по России">
+      </div>
+    </div>
+  </section>
+
+  <!-- ЕЩЕ БЛОК -->
+  <section class="info-block gray-bg">
+    <div class="container two-columns reverse">
+      <div class="text-content">
+        <h2>Печать с <span>гарантией качества</span></h2>
+        <p>Все заказы печатаются на современном оборудовании с использованием сертифицированных материалов. Мы гарантируем идеальную цветопередачу, чёткость изображений и аккуратную постобработку.</p>
+        <p>Наша команда тщательно следит за каждым этапом печати, чтобы вы были уверены в результате.</p>
+      </div>
+      <div class="image-content">
+        <img src="static/images/photo-main.jpg" alt="Гарантия качества">
+      </div>
+    </div>
+  </section>
+
+  <!-- ПРЕИМУЩЕСТВА -->
+  <section class="benefits">
+    <div class="container">
+      <h2>Почему выбирают нас</h2>
+      <div class="icons-grid">
+        <div class="icon-item">
+          <img src="static/images/icon-1.svg" alt="Доставка">
+          <p>Быстрая доставка</p>
+        </div>
+        <div class="icon-item">
+          <img src="static/images/icon-2.svg" alt="Качество">
+          <p>Гарантия качества</p>
+        </div>
+        <div class="icon-item">
+          <img src="static/images/icon-3.svg" alt="Цены">
+          <p>Доступные цены</p>
+        </div>
+        <div class="icon-item">
+          <img src="static/images/icon-4.svg" alt="Поддержка">
+          <p>Поддержка 24/7</p>
+        </div>
+        <div class="icon-item">
+          <img src="static/images/icon-5.svg" alt="Опыт">
+          <p>20 лет на рынке</p>
+        </div>
+        <div class="icon-item">
+          <img src="static/images/icon-2.svg" alt="Скорость">
+          <p>Оперативная печать</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+      <!-- ДОПОЛНИТЕЛЬНЫЕ ТЕКСТОВЫЕ БЛОКИ -->
+    <section class="text-section">
+      <div class="container">
+        <h2>Индивидуальный подход к каждому клиенту</h2>
+        <p>Наша типография учитывает все пожелания клиента. Мы внимательно изучаем задание, предлагаем оптимальные решения и сопровождаем заказ на всех этапах производства. Наши менеджеры всегда готовы ответить на любые вопросы и помочь с выбором.</p>
+      </div>
+    </section>
+
+    <section class="text-section gray-bg">
+      <div class="container">
+        <h2>Удобные способы оплаты</h2>
+        <p>Мы предлагаем различные способы оплаты: наличный расчёт, банковский перевод, онлайн-оплата. Для постоянных клиентов и корпоративных заказчиков доступны специальные условия сотрудничества и гибкая система скидок.</p>
+      </div>
+    </section>
+
+    <section class="text-section">
+      <div class="container">
+        <h2>Контроль качества на всех этапах</h2>
+        <p>Каждый заказ проходит строгую проверку на соответствие стандартам качества. Мы контролируем не только печатный процесс, но и упаковку, маркировку, оформление документации. Это позволяет нам обеспечивать высокий уровень сервиса и исключать ошибки.</p>
+      </div>
+    </section>
+
+
+  <!-- МОДАЛЬНАЯ ФОРМА -->
+  <div class="modal hidden" id="modal-call">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Заказать звонок</h2>
+            <form>
+                <input type="text" placeholder="Имя">
+                <input type="tel" placeholder="Телефон">
+                <textarea placeholder="Сообщение"></textarea>
+                <button class="btn filled" type="submit">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+  <!-- ОБРАТНЫЙ ЗВОНОК -->
+  <section class="contact-form-section">
+      <h2 class="contact-title">Запрос <span>на печать</span> в Типографию</h2>
+      <form class="contact-form">
+        <div class="input-row">
+          <input type="text" placeholder="Ваше Имя" required>
+          <input type="email" placeholder="Ваш e-mail" required>
+        </div>
+        <input type="text" placeholder="Тема" required>
+        <textarea placeholder="Сообщение" required></textarea>
+        <button type="submit">Отправить</button>
+      </form>
+    </section>
+
+  <!-- FOOTER -->
+<footer class="footer">
+      <div class="footer-top">
+        <div class="footer-column logo-column">
+          <img src="{{ url_for('static', filename='images/header-logo.svg') }}" alt="Типография Москва" class="footer-logo">
+          <p>Ваши идеи – наша печать:<br>творим с любовью в Москве!</p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Наши услуги</h4>
+          <ul>
+            <li><a href="#">Услуги типографии</a></li>
+            <li><a href="#">Цифровая типография</a></li>
+            <li><a href="#">Офсетная типография</a></li>
+            <li><a href="#">Недорогая типография</a></li>
+            <li><a href="#">Типография с доставкой</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Информация</h4>
+          <ul>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Доставка</a></li>
+            <li><a href="#">Оплата</a></li>
+            <li><a href="#">Фотогалерея</a></li>
+            <li><a href="#">Журнал</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column contact-column">
+          <div class="social-icons">
+            <a href="#"><img src="static/images/vk.svg" alt="VK"></a>
+            <a href="#"><img src="static/images/header-line-whats-app.svg" alt="WhatsApp"></a>
+          </div>
+          <p>+7 (495) 108 74 70</p>
+          <p>Москва<br>улица Стромынка, 9</p>
+          <p>ПН – ПТ: 9:00 – 20:00</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>2025 <a href="#">Типография Москва</a></p>
+        <a href="#" class="scroll-top">↑</a>
+      </div>
+    </footer>
+
+  <script src="static/script.js"></script>
+</body>
+</html>
+
